@@ -400,7 +400,7 @@ export default class ImageControl extends React.Component<
 > {
   static defaultProps = {
     limit: undefined,
-    accept: 'image/jpeg, image/jpg, image/png, image/gif',
+    accept: 'image/jpeg, image/jpg, image/png, image/gif, image/bmp, image/webp, image/svg+xml, image/tiff, image/x-icon, image/avif',
     receiver: '/api/upload',
     hideUploadButton: false,
     placeholder: 'Image.placeholder',

@@ -4,6 +4,7 @@
 test.sass
 npm-debug.log
 yarn.lock
+.npm-cache
 
 
 # Folders

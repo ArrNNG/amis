@@ -228,7 +228,7 @@ export class ImageControlPlugin extends BasePlugin {
 
               {
                 type: 'input-text',
-                value: '.jpeg, .jpg, .png, .gif',
+                value: '.jpeg, .jpg, .png, .gif, .bmp, .webp, .svg, .tiff, .ico, .avif',
                 name: 'accept',
                 label: tipedLabel(
                   '图片类型',

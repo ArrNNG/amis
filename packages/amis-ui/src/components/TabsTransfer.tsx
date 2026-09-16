@@ -376,7 +376,7 @@ export class TabsTransfer extends React.Component<
 
     return selectMode === 'table' ? (
       <TableCheckboxes
-        className={cx('Transfer-checkboxes')}
+        className={cx('Transfer-selection', 'Transfer-checkboxes')}
         columns={option.columns as any}
         options={option.children || []}
         value={value}
@@ -395,7 +395,7 @@ export class TabsTransfer extends React.Component<
     ) : selectMode === 'tree' ? (
       <Tree
         loadingConfig={loadingConfig}
-        className={cx('Transfer-checkboxes')}
+        className={cx('Transfer-selection', 'Transfer-checkboxes')}
         options={option.children || []}
         value={value}
         multiple={multiple}
@@ -425,7 +425,7 @@ export class TabsTransfer extends React.Component<
       />
     ) : selectMode === 'chained' ? (
       <ChainedCheckboxes
-        className={cx('Transfer-checkboxes')}
+        className={cx('Transfer-selection', 'Transfer-checkboxes')}
         options={option.children || []}
         value={value}
         multiple={multiple}
@@ -451,7 +451,7 @@ export class TabsTransfer extends React.Component<
       />
     ) : selectMode === 'associated' ? (
       <AssociatedCheckboxes
-        className={cx('Transfer-checkboxes')}
+        className={cx('Transfer-selection', 'Transfer-checkboxes')}
         options={option.children || []}
         value={value}
         multiple={multiple}
@@ -482,7 +482,7 @@ export class TabsTransfer extends React.Component<
       />
     ) : (
       <ListCheckboxes
-        className={cx('Transfer-checkboxes')}
+        className={cx('Transfer-selection', 'Transfer-checkboxes')}
         options={option.children || []}
         value={value}
         multiple={multiple}

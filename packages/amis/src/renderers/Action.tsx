@@ -291,11 +291,12 @@ export class Action extends React.Component<ActionProps, ActionState> {
 
     // download 是一种 ajax 的简写
     if (actionType === 'download') {
+      const api = normalizeApi((action as AMISLegacyAjaxActionButton).api);
+      api.responseType = 'blob';
       action = {
         ...action,
-        responseType: 'blob',
         actionType: 'ajax',
-        api: normalizeApi((action as AMISLegacyAjaxActionButton).api)
+        api: api
       };
     }
 

@@ -11,7 +11,6 @@ import {
 import isEqual from 'lodash/isEqual';
 import cx from 'classnames';
 import {LazyComponent} from 'amis-core';
-import {normalizeApi} from 'amis-core';
 import {ucFirst, anyChanged} from 'amis-core';
 import type {FormBaseControlSchema, SchemaApi} from '../../Schema';
 
@@ -261,26 +260,11 @@ export default class RichTextControl extends React.Component<
   }
 
   getConfig(props: RichTextProps) {
+    const self = this;
     const finnalVendor =
       props.vendor || (props.env.richTextToken ? 'froala' : 'tinymce');
 
-    const imageReceiver = normalizeApi(
-      props.receiver,
-      props.receiver?.method || 'post'
-    );
-    imageReceiver.data = imageReceiver.data || {};
-    const imageApi = buildApi(imageReceiver, props.data, {
-      method: props.receiver.method || 'post'
-    });
     if (finnalVendor === 'froala') {
-      const videoReceiver = normalizeApi(
-        props.videoReceiver,
-        props.videoReceiver.method || 'post'
-      );
-      videoReceiver.data = videoReceiver.data || {};
-      const videoApi = buildApi(videoReceiver, props.data, {
-        method: props.videoReceiver.method || 'post'
-      });
       return {
         imageAllowedTypes: ['jpeg', 'jpg', 'png', 'gif'],
         imageDefaultAlign: 'left',
@@ -306,20 +290,64 @@ export default class RichTextControl extends React.Component<
         ...props.options,
         editorClass: props.editorClass,
         placeholderText: props.translate(props.placeholder),
-        imageUploadURL: imageApi.url,
-        imageUploadParams: {
-          from: 'rich-text',
-          ...imageApi.data
-        },
-        videoUploadURL: videoApi.url,
-        videoUploadParams: {
-          from: 'rich-text',
-          ...videoApi.data
-        },
+        // 禁用 Froala 内置上传，统一通过 beforeUpload 事件走 amis 的 uploadFile
+        // 好处：1) 支持 amis fetcher（含鉴权、请求适配器）2) 支持 amis 响应格式 3) 未配置 receiver 时 base64 回退
+        imageUploadURL: false,
+        videoUploadURL: false,
         events: {
           ...(props.options && props.options.events),
-          focus: this.handleFocus,
-          blur: this.handleBlur
+          'image.beforeUpload': function (files: File[]) {
+            const editor = this;
+            if (files && files.length) {
+              for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                self
+                  .uploadFile(file, file.name, 'image')
+                  .then(result => {
+                    editor.image.insert(
+                      result.link,
+                      false,
+                      {alt: result.meta.alt},
+                      null,
+                      result.meta
+                    );
+                  })
+                  .catch(err => {
+                    if (self.props.env?.notify) {
+                      self.props.env.notify(
+                        'error',
+                        err.message || '图片上传失败'
+                      );
+                    }
+                  });
+              }
+            }
+            return false;
+          },
+          'video.beforeUpload': function (files: File[]) {
+            const editor = this;
+            if (files && files.length) {
+              for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                self
+                  .uploadFile(file, file.name, 'media')
+                  .then(result => {
+                    editor.video.insert(result.link, result.meta);
+                  })
+                  .catch(err => {
+                    if (self.props.env?.notify) {
+                      self.props.env.notify(
+                        'error',
+                        err.message || '视频上传失败'
+                      );
+                    }
+                  });
+              }
+            }
+            return false;
+          },
+          'focus': this.handleFocus,
+          'blur': this.handleBlur
         },
         language:
           !this.props.locale || this.props.locale === 'zh-CN' ? 'zh_cn' : '',

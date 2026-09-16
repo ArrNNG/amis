@@ -1,5 +1,6 @@
 import {AMISPageSchema} from './renderers/Page';
 import {AMISButtonSchema, AMISFormSchema} from 'amis-core';
+import {AMISAiChatSchema} from './renderers/Chat';
 import {AMISAlertSchema} from './renderers/Alert';
 import {AMISFlexSchema} from './renderers/Flex';
 import {AMISTplSchema} from './renderers/Tpl';

@@ -7,6 +7,11 @@ import './preset';
 
 // 注册渲染器
 
+registerRenderer({
+  type: 'ai-chat',
+  getComponent: () => import('./renderers/Chat')
+});
+
 // import './renderers/Action';
 registerRenderer({
   type: 'action',

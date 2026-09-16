@@ -909,6 +909,11 @@ export default class CRUD2<T extends CRUD2Props> extends React.Component<
         })
         .catch(() => {});
     } else {
+      // 如果 saveImmediately 为 false，不立即保存，等待批量保存
+      if (!(options as any)?.saveImmediately) {
+        return;
+      }
+
       if (!isEffectiveApi(quickSaveItemApi)) {
         env && env.alert('CRUD quickSaveItemApi is required!');
         return;

@@ -152,6 +152,8 @@ import AutoFoldedList from './AutoFoldedList';
 
 import AlphabetIndexer from './AlphabetIndexer';
 import MixedInput from './MixedInput';
+import Chat from './chat';
+import type {ChatMessage, ChatRole, ChatMessageStatus, ChatProps} from './chat';
 export {
   NotFound,
   Alert as AlertComponent,
@@ -301,5 +303,10 @@ export {
   HorizontalScroll,
   HorizontalScrollProps,
   AutoFoldedList,
-  MixedInput
+  MixedInput,
+  Chat,
+  ChatMessage,
+  ChatRole,
+  ChatMessageStatus,
+  ChatProps
 };

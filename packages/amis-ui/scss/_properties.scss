@@ -885,6 +885,62 @@ $Table-strip-bg: transparent;
   --IconSelect-type-width: #{px2rem(88px)};
   --IconSelect-type-li-height: #{px2rem(32px)};
   --IconSelect-type-li-padding: var(--gap-md);
+
+  --Chat-bg: var(--colors-neutral-fill-11);
+  --Chat-border-radius: var(--borderRadius);
+
+  --Chat-messages-padding: var(--gap-md);
+
+  --Chat-welcome-padding: var(--gap-lg) var(--gap-md);
+  --Chat-welcome-color: var(--colors-neutral-text-5);
+
+  --Chat-message-margin-bottom: var(--gap-md);
+  --Chat-message-max-width: 80%;
+  --Chat-message-avatar-margin: var(--gap-sm);
+
+  --Chat-message-user-bg: var(--colors-brand-5);
+  --Chat-message-user-color: var(--colors-neutral-fill-11);
+  --Chat-message-bubble-radius-user: #{px2rem(8px)} #{px2rem(2px)} #{px2rem(8px)} #{px2rem(8px)};
+
+  --Chat-message-ai-bg: var(--colors-neutral-fill-10);
+  --Chat-message-ai-color: var(--colors-neutral-text-1);
+  --Chat-message-bubble-radius-ai: #{px2rem(2px)} #{px2rem(8px)} #{px2rem(8px)} #{px2rem(8px)};
+
+  --Chat-message-system-bg: transparent;
+  --Chat-message-system-color: var(--colors-neutral-text-5);
+  --Chat-message-system-font-size: var(--fontSizeSm);
+
+  --Chat-message-bubble-padding: var(--gap-sm) var(--gap-md);
+  --Chat-message-bubble-line-height: 1.6;
+
+  --Chat-message-action-color: var(--colors-neutral-text-5);
+  --Chat-message-action-hover-bg: var(--colors-neutral-fill-9);
+
+  --Chat-input-border-color: var(--colors-neutral-line-9);
+  --Chat-input-padding: var(--gap-md);
+  --Chat-input-bg: var(--colors-neutral-fill-11);
+
+  --Chat-input-wrapper-border-color: var(--colors-neutral-line-9);
+  --Chat-input-wrapper-border-radius: var(--borderRadius);
+  --Chat-input-wrapper-padding: var(--gap-sm);
+  --Chat-input-wrapper-bg: var(--colors-neutral-fill-11);
+  --Chat-input-wrapper-focus-border-color: var(--colors-brand-5);
+
+  --Chat-input-font-size: var(--fontSizeBase);
+  --Chat-input-line-height: 1.5;
+  --Chat-input-max-height: #{px2rem(120px)};
+  --Chat-input-min-height: #{px2rem(24px)};
+  --Chat-input-color: var(--colors-neutral-text-1);
+  --Chat-input-placeholder-color: var(--colors-neutral-text-6);
+
+  --Chat-suggestions-padding: 0 var(--gap-md) var(--gap-md);
+  --Chat-suggestion-font-size: var(--fontSizeSm);
+  --Chat-suggestion-border-color: var(--colors-neutral-line-8);
+  --Chat-suggestion-border-radius: var(--borderRadius);
+  --Chat-suggestion-bg: var(--colors-neutral-fill-10);
+  --Chat-suggestion-color: var(--colors-neutral-text-2);
+  --Chat-suggestion-hover-bg: var(--colors-neutral-fill-9);
+  --Chat-suggestion-hover-border-color: var(--colors-brand-5);
 }
 
 @media (max-width: 767px) {

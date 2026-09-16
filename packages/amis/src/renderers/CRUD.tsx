@@ -1826,6 +1826,11 @@ export default class CRUD<T extends CRUDProps> extends React.Component<T, any> {
           );
         });
     } else {
+      // 如果 saveImmediately 为 false，不立即保存，等待批量保存
+      if (!options?.saveImmediately) {
+        return;
+      }
+
       const api = getQuickEditApi(options?.saveImmediately, quickSaveItemApi);
 
       if (!isEffectiveApi(api)) {

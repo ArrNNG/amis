@@ -259,6 +259,7 @@ export class TreeSelector extends React.Component<
   };
   root = React.createRef<HTMLDivElement>();
   virtualListRef: HTMLDivElement | null = null;
+  measureNode: HTMLElement | null = null;
   unSensor?: () => void;
 
   constructor(props: TreeSelectorProps) {
@@ -348,6 +349,16 @@ export class TreeSelector extends React.Component<
         value: newValue,
         valueSet: new Set(newValue)
       });
+    }
+
+    // 组件可能挂载在隐藏容器中（比如组合穿梭器里未激活的 tab），
+    // 此时测量 itemHeight 会得到 0，导致虚拟列表只渲染第一项。
+    // 容器显示后需要重新测量，否则会一直停留在只渲染第一项的状态。
+    if (this.state.itemHeight === 0 && this.measureNode) {
+      const itemHeight = this.measureNode.offsetHeight;
+      if (itemHeight > 0) {
+        this.setState({itemHeight});
+      }
     }
   }
 
@@ -1629,7 +1640,13 @@ export class TreeSelector extends React.Component<
 
   @autobind
   styleGetter(node: HTMLElement | null) {
-    node && this.setState({itemHeight: node?.offsetHeight || 0});
+    if (!node) {
+      this.measureNode = null;
+      return;
+    }
+
+    this.measureNode = node;
+    this.setState({itemHeight: node.offsetHeight || 0});
   }
 
   @autobind

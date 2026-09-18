@@ -9,4 +9,4 @@
 
 ## Reporting a Vulnerability
 
-https://github.com/baidu/amis/issues
+https://github.com/ArrNNG/amis/issues

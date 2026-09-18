@@ -55,9 +55,9 @@
   ],
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/baidu/amis/issues"
+    "url": "https://github.com/ArrNNG/amis/issues"
   },
-  "homepage": "https://github.com/baidu/amis#readme",
+  "homepage": "https://github.com/ArrNNG/amis#readme",
   "dependencies": {
     "numfmt": "^2.5.2",
     "papaparse": "^5.4.1",

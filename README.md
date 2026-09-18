@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-    <img width="284" src="https://github.com/baidu/amis/raw/master/examples/static/logo.png">
+    <img width="284" src="https://github.com/ArrNNG/amis/raw/master/examples/static/logo.png">
   </p>
 
 [文档（国内）](https://aisuda.bce.baidu.com/amis/) |
@@ -18,12 +18,12 @@
 
 <div align="center">
 
-![build](https://img.shields.io/github/actions/workflow/status/baidu/amis/gh-pages.yml)
-![license](https://img.shields.io/github/license/baidu/amis.svg)
+![build](https://img.shields.io/github/actions/workflow/status/ArrNNG/amis/gh-pages.yml)
+![license](https://img.shields.io/github/license/ArrNNG/amis.svg)
 ![version](https://img.shields.io/npm/v/amis)
-![language](https://img.shields.io/github/languages/top/baidu/amis)
-[![codecov](https://codecov.io/gh/baidu/amis/branch/master/graph/badge.svg?token=9LwimHGoE5)](https://codecov.io/gh/baidu/amis)
-![last](https://img.shields.io/github/last-commit/baidu/amis.svg)
+![language](https://img.shields.io/github/languages/top/ArrNNG/amis)
+[![codecov](https://codecov.io/gh/ArrNNG/amis/branch/master/graph/badge.svg?token=9LwimHGoE5)](https://codecov.io/gh/ArrNNG/amis)
+![last](https://img.shields.io/github/last-commit/ArrNNG/amis.svg)
 
 </div>
 
@@ -33,7 +33,7 @@
 
 以下是参与开发 amis 才需要看的，使用请看前面的文档。
 
-> 如果 github 下载慢可以使用 [gitee](https://gitee.com/baidu/amis) 上的镜像。
+> 如果 github 下载慢可以使用 [gitee](https://gitee.com/ArrNNG/amis) 上的镜像。
 
 推荐使用 node 12/14/16。npm 7+， 因为用到了 workspaces 功能。
 
@@ -108,7 +108,7 @@ npm run release
 
 ## 贡献者
 
-<a href="https://github.com/baidu/amis/graphs/contributors"><img src="https://opencollective.com/amis/contributors.svg?width=890" /></a>
+<a href="https://github.com/ArrNNG/amis/graphs/contributors"><img src="https://opencollective.com/amis/contributors.svg?width=890" /></a>
 
 ## 低代码平台
 

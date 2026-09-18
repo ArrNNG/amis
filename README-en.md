@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-    <img width="284" src="https://github.com/baidu/amis/raw/master/examples/static/logo.png">
+    <img width="284" src="https://github.com/ArrNNG/amis/raw/master/examples/static/logo.png">
   </p>
 
 [Documentation (China)](https://aisuda.bce.baidu.com/amis/) |
@@ -18,12 +18,12 @@
 
 <div align="center">
 
-![build](https://img.shields.io/github/actions/workflow/status/baidu/amis/gh-pages.yml)
-![license](https://img.shields.io/github/license/baidu/amis.svg)
+![build](https://img.shields.io/github/actions/workflow/status/ArrNNG/amis/gh-pages.yml)
+![license](https://img.shields.io/github/license/ArrNNG/amis.svg)
 ![version](https://img.shields.io/npm/v/amis)
-![language](https://img.shields.io/github/languages/top/baidu/amis)
-[![codecov](https://codecov.io/gh/baidu/amis/branch/master/graph/badge.svg?token=9LwimHGoE5)](https://codecov.io/gh/baidu/amis)
-![last](https://img.shields.io/github/last-commit/baidu/amis.svg)
+![language](https://img.shields.io/github/languages/top/ArrNNG/amis)
+[![codecov](https://codecov.io/gh/ArrNNG/amis/branch/master/graph/badge.svg?token=9LwimHGoE5)](https://codecov.io/gh/ArrNNG/amis)
+![last](https://img.shields.io/github/last-commit/ArrNNG/amis.svg)
 
 </div>
 
@@ -33,7 +33,7 @@ A low-code front-end framework that allows you to generate various backend pages
 
 The following is for those who want to contribute to the development of amis. For usage, refer to the documentation above.
 
-> If GitHub downloads are slow, you can use the mirror on [gitee](https://gitee.com/baidu/amis).
+> If GitHub downloads are slow, you can use the mirror on [gitee](https://gitee.com/ArrNNG/amis).
 
 Node.js versions 12/14/16 are recommended. Use npm 7+ because the workspaces feature is required.
 
@@ -108,7 +108,7 @@ Please write in TypeScript. All reasonable changes, new public renderers, test c
 
 ## Contributors
 
-<a href="https://github.com/baidu/amis/graphs/contributors"><img src="https://opencollective.com/amis/contributors.svg?width=890" /></a>
+<a href="https://github.com/ArrNNG/amis/graphs/contributors"><img src="https://opencollective.com/amis/contributors.svg?width=890" /></a>
 
 ## Low-Code Platform
 
